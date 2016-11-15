@@ -1,5 +1,10 @@
 require 'sinatra'
+require 'sinatra/reloader'
 
-get '/' do
-  "Hello, World!"
-end
+
+  number = rand(0..100)
+
+  get '/' do
+    words = "secret number".upcase
+    "The #{words} is #{number}."
+  end
