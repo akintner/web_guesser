@@ -1,8 +1,20 @@
 <html>
-  <head></head>
+  <head>
+    <style>
+      body {
+        background: <%= color %>;
+      }
+    </style>
+  </head>
   <body>
-    <p>
-      The SECRET NUMBER is <%= number %>
-    </p>
+    <h3> Welcome to the number guessing game. You have 7 guesses to correctly identify the secret number, which is between 1 and 100. 
+    If you use all seven guesses before getting the number right, the secret number will be reset and your seven guesses
+    will begin anew. Good Luck. 
+    </h3>
+    <form>
+      <input type="text" name="guess" />
+      <input type="submit" value="Guess!" <%= @@guess_count -= 1 %>/>
+    </form>
+    <p> <%= result %> </p>
   </body>
 </html>
